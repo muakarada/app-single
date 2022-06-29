@@ -1,10 +1,17 @@
-<form action="/edit/{{task._id}}" method="POST">
-  <input type="text" name="title" placeholder="Título" value="{{task.title}}" />
-  <textarea
-    name="description"
-    placeholder="Escriba una descripción a la tarea"
-  >
-    {{task.description}}</textarea>
-
-  <button>Actualizar</button>
-</form>
+<div class="container-md mt-5">
+  <form action="/edit/{{task._id}}" method="POST">
+    <input
+      class="form-control mb-3"
+      type="text"
+      name="title"
+      placeholder="Título"
+      value="{{task.title}}"
+    />
+    <textarea
+      class="form-control"
+      name="description"
+      placeholder="Escriba una descripción de la tarea"
+    >{{task.description}}</textarea>
+    <button class="btn btn-outline-dark mt-2">Actualizar</button>
+  </form>
+</div>

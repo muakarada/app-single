@@ -1,22 +1,22 @@
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>
+      <th scope="col">
         Tarea
       </th>
-      <th>
+      <th scope="col">
         Título
       </th>
-      <th>
+      <th scope="col">
         Descripción
       </th>
-      <th>
+      <th scope="col">
         Operaciones
       </th>
     </tr>
     <tbody>
       {{#each tasks}}
-        <tr>
+        <tr scope="row">
           <td>{{@index}}</td>
           <td>{{title}}</td>
           <td>{{description}}</td>

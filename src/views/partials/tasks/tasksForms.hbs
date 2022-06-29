@@ -1,15 +1,18 @@
-<form action="/tasks/add" method="POST">
-  <div>
-    <label for="title">Escribe un titulo para tú tarea</label>
-    <input type="text" name="title" placeholder="Título tarea" id="title" />
-  </div>
-  <div>
-    <label for="description">Escribe la descripción de la tarea:</label>
-    <textarea
-      name="description"
-      placeholder="Descripción"
-      id="description"
-    ></textarea>
-  </div>
-  <button>Agregar</button>
-</form>
+<div class="m-10 w-30">
+  <form action="/tasks/add" method="POST">
+    <div>
+      <label for="title" class="form-label">Escribe un titulo para tu tarea</label>
+      <input class="form-control" type="text" name="title" placeholder="Título tarea" id="title" />
+    </div>
+    <div>
+      <label for="description" class="form-label">Escribe la descripción de la tarea:</label>
+      <textarea
+        class="form-control"
+        name="description"
+        placeholder="Descripción"
+        id="description"
+      ></textarea>
+    </div>
+    <button class="btn btn-outline-dark mt-2">Agregar</button>
+  </form>
+</div>
