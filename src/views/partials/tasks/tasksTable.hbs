@@ -1,36 +1,52 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">
-        Tarea
-      </th>
-      <th scope="col">
-        Título
-      </th>
-      <th scope="col">
-        Descripción
-      </th>
-      <th scope="col">
-        Operaciones
-      </th>
-    </tr>
-    <tbody>
-      {{#each tasks}}
-        <tr scope="row">
-          <td>{{@index}}</td>
-          <td>{{title}}</td>
-          <td>{{description}}</td>
-          <td>
-            {{#if done}}
-                <a href="/toggleDone/{{_id}}">Hecha</a>
-            {{else}}
-                <a href="/toggleDone/{{_id}}">Sin hacer</a>
-            {{/if}}
-            <a href="/delete/{{_id}}">Eliminar</a>
-            <a href="/edit/{{_id}}">Actualizar</a>
-          </td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </thead>
-</table>
+{{#if tasks}}
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">
+          Tarea
+        </th>
+        <th scope="col">
+          Título
+        </th>
+        <th scope="col">
+          Descripción
+        </th>
+        <th scope="col">
+          Operaciones
+        </th>
+      </tr>
+      <tbody>
+        {{#each tasks}}
+          <tr scope="row">
+            <td>{{@index}}</td>
+            <td>{{title}}</td>
+            <td>{{description}}</td>
+            <td>
+              {{#if done}}
+                <a
+                  href="/toggleDone/{{_id}}"
+                  class="btn btn-outline-success"
+                >Hecha</a>
+              {{else}}
+                <a href="/toggleDone/{{_id}}" class="btn btn-outline-dark">Sin
+                  hacer</a>
+              {{/if}}
+              <a
+                href="/delete/{{_id}}"
+                class="btn btn-outline-danger"
+              >Eliminar</a>
+              <a
+                href="/edit/{{_id}}"
+                class="btn btn-outline-warning"
+              >Actualizar</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </thead>
+  </table>
+{{else}}
+  <div class="text-center">
+    <h3>No tienes tareas pendientes</h3>
+  </div>
+{{/if}}
